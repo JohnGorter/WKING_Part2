@@ -1,3 +1,24 @@
+body { background-image: url('./images/logo.jpg');}
 
+div {
+    border:1px solid black;
+    padding:10px;
+    border-radius:15px;
+    }
+
+#header, #footer {
+    background-color:green;
+    color:white;
+    }
     
+#list, #details, #form {
+    margin:10px;
+    background-color:yellow;
+    float:left;
+    width:350px;
+    }
+    
+#footer {
+    clear:left
+    }    
     
