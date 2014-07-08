@@ -6,6 +6,10 @@ div {
     border-radius:15px;
     }
 
+
+    li > span { display:none}
+    .visible { display:block}
+    
 #header, #footer {
     background-color:green;
     color:white;
