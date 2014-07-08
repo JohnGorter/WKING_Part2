@@ -1,28 +1,34 @@
-body { background-image: url('./images/logo.jpg');}
 
-div {
-    border:1px solid black;
-    padding:10px;
-    border-radius:15px;
-    }
-
-
-    li > span { display:none}
-    .visible { display:block}
+li > span { display:none}
+.visible { display:block}
     
 #header, #footer {
+    position:relative;
     background-color:green;
     color:white;
+    border:1px solid black;
+    border-radius:15px;
+    padding:10px;
+    margin-bottom:20px;
+    -webkit-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}
+    
+.start {
+    -webkit-transform:rotateY(-0deg);
+    transform:rotateY(-0deg);
+    }
+    
+.end {
+    -webkit-transform:rotateY(720deg);
+    transform:rotateY(720deg);
     }
     
 #list, #details, #form {
-    margin:10px;
+    padding:10px;
     background-color:yellow;
-    float:left;
-    width:350px;
+    border:1px solid black;
+    border-radius:15px;
+    margin-bottom:20px;
     }
-    
-#footer {
-    clear:left
-    }    
-    
+

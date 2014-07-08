@@ -3,57 +3,75 @@
 <head>
     <title>WC 2014 Finals</title>
     <link rel="stylesheet" type="text/css" href="default.css"></link>
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css"></link>
+    
     <script type="text/javascript" src="./scripts/jquery.js"></script>
     <script type="text/javascript" src="./scripts/mainjq.js"></script>
 </head>
 
 <body>
 
-<!--
-Vakantie bestemmmingen: <br/>
-Spanje <input type="checkbox" name="countries" value="Spanje" /><br/>
-Brasil <input type="checkbox" name="countries" value="Brasil" /><br/>
-Italie <input type="checkbox" name="countries" value="Italie" /><br/>
-Nederland <input type="checkbox" name="countries" value="Nederland" /><br/>
-<input type="button" value="save" id="btnCheck" />
-// -->
-
-<div id="header">
-    <h1>WC 2014 Finals</h1>
-</div>
-
-<div id="form">
-    <h2>Insert a new Game, john!!</h2>
-    <form>
-        <dl>
-            <dt>Title</dt>
-            <dd><input type="text" name="title" id="title" /></dd>
-            <dt>Description</dt>
-            <dd><input type="text" name="description" id="description"/></dd>
-            <dt>Date</dt>
-            <dd><input type="text" name="date" id="date"/></dd>
-            <dt>Score</dt>
-            <dd><input type="text" name="score" id="score"/></dd>
-        </dl>
-        <input type="button" value="save" id="btnSave"/>
-    </form>
-</div>
-
-<div id="list">
-    <h2 class="redbg">Games</h2>
-    <ul id="ullist" onclick="getDetails();">
-         
-    </ul>
-</div>
-
-<div id="details">
-    <h2 id="details_title">NED-BRA <small>3-0</small></h2>
-    <p id="details_description">Deze wedstrijd heeft een bijzonder tintje, het wordt namelijk de eerste keer dat Nederland met
-    een 6-6-6 opstelling speelt... bla bla bla</p>
-</div>
-
-<div id="footer">
-    <h3>All rights reserved (c) Info Support B.V.</h3>
+<script>
+    $(function(){
+        $("#header").delay(2000).removeClass("start").addClass("end");
+        });
+    
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="header" class="start">
+                <h1 id="headerdesktop" class="hidden-xs">WC 2014 Finals Desktop</h1>
+                <h1 id="headermobile" class="visible-xs">WC 2014 Finals Mobile</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <div id="form">
+            <h2>Insert a new Game, john!!</h2>
+            <form>
+                <dl>
+                    <dt>Title</dt>
+                    <dd><input type="text" name="title" id="title" /></dd>
+                    <dt>Description</dt>
+                    <dd><input type="text" name="description" id="description"/></dd>
+                    <dt>Date</dt>
+                    <dd><input type="text" name="date" id="date"/></dd>
+                    <dt>Score</dt>
+                    <dd><input type="text" name="score" id="score"/></dd>
+                </dl>
+                <input type="button" value="save" id="btnSave"/>
+            </form>
+            </div>
+        </div>
+    
+        <div class="col-xs-12 col-sm-4">
+            <div id="list">
+                <h2 class="redbg">Games</h2>
+                <ul id="ullist" onclick="getDetails();">
+                     
+                </ul>
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-4">
+            <div id="details">
+                <h2 id="details_title">NED-BRA <small>3-0</small></h2>
+                <p id="details_description">Deze wedstrijd heeft een bijzonder tintje, het wordt namelijk de eerste keer dat Nederland met
+                een 6-6-6 opstelling speelt... bla bla bla</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="footer">
+                <h3>All rights reserved (c) Info Support B.V.</h3>
+            </div>
+        </div>
+    </div>    
 </div>
 
 </body>
