@@ -5,42 +5,50 @@
     
     <link rel="stylesheet" type="text/css" href="default.css"></link>
     
+    
+    
 </head>
 
 <body>
-    
+
 <div id="header">
     <h1>WC 2014 Finals</h1>
 </div>
+
+
+<div id="john">
+    <button onclick="alert('push the button');"></button>
+</div>
+
 
 <div id="form">
     <h2>Insert a new Game</h2>
     <form>
         <dl>
             <dt>Title</dt>
-            <dd><input type="text" name="title"/></dd>
+            <dd><input type="text" name="title" id="title" /></dd>
             <dt>Description</dt>
-            <dd><input type="text" name="description"/></dd>
+            <dd><input type="text" name="description" id="description"/></dd>
             <dt>Date</dt>
-            <dd><input type="text" name="date"/></dd>
+            <dd><input type="text" name="date" id="date"/></dd>
             <dt>Score</dt>
-            <dd><input type="text" name="score"/></dd>
+            <dd><input type="text" name="score" id="score"/></dd>
         </dl>
-        <input type="submit" value="save"/>
+        <input type="button" value="save" id="btnSave" onclick="save();"/>
     </form>
 </div>
 
 <div id="list">
     <h2 class="redbg">Games</h2>
-    <ul>
+    <ul id="ullist" onclick="getDetails();">
         <li>NED-BRA</li>
         <li>BEL-BRA</li>
-        <li>NED-BEL</li>
+        <li>NED-BEL</li> 
     </ul>
 </div>
 
 <div id="details">
-    <h2>NED-BRA <small>3-0</small></h2>
+    <h2 id="details_title">NED-BRA <small>3-0</small></h2>
     <p >Deze wedstrijd heeft een bijzonder tintje, het wordt namelijk de eerste keer dat Nederland met
     een 6-6-6 opstelling speelt... bla bla bla</p>
 </div>
@@ -50,4 +58,7 @@
 </div>
 
 </body>
+
+<script type="text/javascript" src="./scripts/main.js"></script>
+
 </html>
