@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WC 2014 Finals</title>
+    <title>World Cup 2014 Finals</title>
     <link rel="stylesheet" type="text/css" href="default.css"></link>
     <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css"></link>
     
@@ -21,8 +21,8 @@
     <div class="row">
         <div class="col-xs-12">
             <div id="header" class="start">
-                <h1 id="headerdesktop" class="hidden-xs">WC 2014 Finals Desktop</h1>
-                <h1 id="headermobile" class="visible-xs">WC 2014 Finals Mobile</h1>
+                <h1 id="headerdesktop" class="hidden-xs">World Cup 2014 Finals Desktop</h1>
+                <h1 id="headermobile" class="visible-xs">World Cup 2014 Finals Mobile</h1>
             </div>
         </div>
     </div>
@@ -30,19 +30,33 @@
     <div class="row">
         <div class="col-xs-12 col-sm-4">
             <div id="form">
-            <h2>Insert a new Game, john!!</h2>
+            <h2>Insert a new Game</h2>
             <form>
-                <dl>
-                    <dt>Title</dt>
-                    <dd><input type="text" name="title" id="title" /></dd>
-                    <dt>Description</dt>
-                    <dd><input type="text" name="description" id="description"/></dd>
-                    <dt>Date</dt>
-                    <dd><input type="text" name="date" id="date"/></dd>
-                    <dt>Score</dt>
-                    <dd><input type="text" name="score" id="score"/></dd>
-                </dl>
-                <input type="button" value="save" id="btnSave"/>
+                <div class="form-group has-feedback">
+                    <label for="title" class="control-label">Game</label>
+                    <div class="input-group">
+                        <input type="text" name="team1" id="team1" class="form-control"/>
+                        <span class="input-group-addon"> - </span>
+                        <input type="text" name="team2" id="team2" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="description" class="control-label">Description</label>
+                    <textarea name="description" id="description" class="form-control"></textarea>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="date" class="control-label">Date</label>
+                    <input type="text" name="date" id="date" class="form-control"/>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="score" class="control-label">Score</label>
+                    <div class="input-group">
+                        <input type="text" name="scoreteam1" id="scoreteam1" class="form-control"/>
+                        <span class="input-group-addon"> - </span>
+                        <input type="text" name="scoreteam2" id="scoreteam2" class="form-control"/>
+                    </div>
+                </div>
+                <input type="button" value="save" id="btnSave" class="btn btn-primary btn-lg"/>
             </form>
             </div>
         </div>
