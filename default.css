@@ -11,17 +11,24 @@ body {
     background-image:url('./images/logo.jpg');
     }
 
+ul {
+    list-style: none;
+}
+
 li {
-    cursor: hand
-    }
+    cursor: pointer;
+    font-size:26px;
+}
     
 li > span {
     display:none
     }
 
+
 /* class styles */
 .visible {
-    display:block
+    display:block;
+    cursor:pointer;
     }
 
 .jumbotron {
@@ -46,6 +53,19 @@ li > span {
     }
     
 /* id styles */
+.modal-header {
+    background-color:green;
+    color:white;
+    border-radius:5px;
+}
+.modal-body {
+    background-color:yellow;
+}
+
+.modal-footer {
+  background-color:white;
+}
+
 #header, #footer {
     position:relative;
     background-color:green;
@@ -58,7 +78,7 @@ li > span {
     transition: all 2s ease-in-out;
 }
 
-#list, #details, #form {
+#list, #details {
     padding:10px;
     background-color:yellow;
     border:1px solid black;

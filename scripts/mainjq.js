@@ -27,25 +27,35 @@
   }
 
    $(function(){
-    
-        // set the focus on the first entry
-         $("#team1").focus();
-         
          // use the enter key to mimic a tab key
-         $("body").keypress(function (){
-            if (window.event.keyCode == 13)
+         $("#myModal").keypress(function (){
+            if (window.event.keyCode == 13){
                 $(':input:eq(' + ($(':input').index($(":focus")) + 1) + ')').focus();
+                }
             });
 
+            
+        $('#myModal').on('shown.bs.modal', function () {
+            $("#team1").focus();
+        });
+        
         // function to insert a new item into the game list
         $("#btnSave").click(function() {
             
-            if (validate("#team1", 2)) return;
-            if (validate("#team2", 2)) return;
-            if (validate("#description", 1)) return;
-            if (validate("#date", 1)) return;
-            if (validate("#scoreteam1", 2)) return;
-            if (validate("#scoreteam2", 2)) return;
+            var notvalid = false;
+            if (validate("#team1", 2)) notvalid=true;
+            if (!notvalid && validate("#team2", 2)) notvalid=true;
+            if (!notvalid && validate("#description", 1)) notvalid=true;
+            if (!notvalid && validate("#date", 1)) notvalid=true;
+            if (!notvalid && validate("#scoreteam1", 2)) notvalid=true;
+            if (!notvalid && validate("#scoreteam2", 2)) notvalid=true;
+             
+             if (notvalid)
+             {
+                window.event.preventDefault();
+                window.event.stopPropagation();
+                return;
+             }
              
              $("#description").parent().removeClass("has-error");
              $("#date").parent().removeClass("has-error");
@@ -80,9 +90,9 @@
             $("#details_title").html($(window.event.target).text() + " <small> [score " + $(window.event.target).next().next().text() + "]</small>");
             $("#details_description").text($(window.event.target).next().text());
          });
-        
+
         // function to hook change events to update the progress bar
-        $("#team1, #team2, #description, #date, #scoreteam1, #scoreteam2").blur(function(){
+        $(":input").focusout(function(){
             $("#progressbar").css('width', getProgess() + "%").text(getProgess() + "% of the form completed");
             });
         
