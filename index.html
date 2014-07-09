@@ -7,6 +7,7 @@
     
     <script type="text/javascript" src="./scripts/jquery.js"></script>
     <script type="text/javascript" src="./scripts/mainjq.js"></script>
+    <script type="text/javascript" src="./bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -17,12 +18,13 @@
         });
     
 </script>
+
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div id="header" class="start">
-                <h1 id="headerdesktop" class="hidden-xs">World Cup 2014 Finals Desktop</h1>
-                <h1 id="headermobile" class="visible-xs">World Cup 2014 Finals Mobile</h1>
+            <div class="jumbotron">
+                <h1 id="headerdesktop" class="hidden-xs">World Cup 2014 Finals <small>desktop</small></h1>
+                <h1 id="headermobile" class="visible-xs">World Cup 2014 Finals <small>mobile</small></h1>
             </div>
         </div>
     </div>
@@ -82,7 +84,10 @@
     <div class="row">
         <div class="col-xs-12">
             <div id="footer">
-                <h3>All rights reserved (c) Info Support B.V.</h3>
+                <h3>All rights reserved (c) Info Support B.V.</h3><br/>
+                <div class="progress progress-success">
+    <div class="progress-bar" id="progressbar"></div>
+</div>
             </div>
         </div>
     </div>    

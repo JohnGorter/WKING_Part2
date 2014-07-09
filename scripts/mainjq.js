@@ -1,4 +1,13 @@
 
+  function getProgess() {
+    var progress = 0;
+    if ($("#team1").val() !== "" && $("#team2").val() !== "") progress += 25;
+    if ($("#description").val() !== "") progress += 25;
+    if ($("#date").val() !== "") progress += 25;
+    if ($("#scoreteam1").val() !== "" && $("#scoreteam2").val() !== "") progress += 25;
+    return progress;
+  }
+
   function validate(inp, level){
     var input = $(inp);
     var parent = input.parent();
@@ -19,6 +28,16 @@
 
    $(function(){
     
+        // set the focus on the first entry
+         $("#team1").focus();
+         
+         // use the enter key to mimic a tab key
+         $("body").keypress(function (){
+            if (window.event.keyCode == 13)
+                $(':input:eq(' + ($(':input').index($(":focus")) + 1) + ')').focus();
+            });
+
+        // function to insert a new item into the game list
         $("#btnSave").click(function() {
             
             if (validate("#team1", 2)) return;
@@ -27,7 +46,6 @@
             if (validate("#date", 1)) return;
             if (validate("#scoreteam1", 2)) return;
             if (validate("#scoreteam2", 2)) return;
-           
              
              $("#description").parent().removeClass("has-error");
              $("#date").parent().removeClass("has-error");
@@ -38,15 +56,35 @@
                              .append($("<span>").text($("#description").val()))
                              .append($("<span>").text($("#scoreteam1").val() + "-" + $("#scoreteam2").val()))
                              .append($("<span>").text($("#date").val()))
-                    .appendTo($("#ullist"));            
+                    .appendTo($("#ullist"));
+                    
+            
+            
+            // clear the form
+            $("#team1").val("").focus();
+            $("#team2").val("");
+            $("#description").val("");
+            $("#date").val("");
+            $("#scoreteam1").val("");
+            $("#scoreteam2").val("");
+            $("#progressbar").css('width', '0%').text('');
+            
+            // game is saved
+            var $alert = $("<DIV class='alert alert-success'><button class='close' data-dismiss='alert'>&times</button><strong>Update:</strong> a new game is inserted!</DIV>");
+            $("#footer").append($alert);
+            $alert.delay(5000).fadeOut('slow');
         });
         
+        // function to show the details of the game in the details panel
         $("#ullist").click(function(){
             $("#details_title").html($(window.event.target).text() + " <small> [score " + $(window.event.target).next().next().text() + "]</small>");
             $("#details_description").text($(window.event.target).next().text());
          });
         
-       // $("#btnCheck").click(function(){$("input:checked").each(function(){ console.log(this.value);})});
+        // function to hook change events to update the progress bar
+        $("#team1, #team2, #description, #date, #scoreteam1, #scoreteam2").blur(function(){
+            $("#progressbar").css('width', getProgess() + "%").text(getProgess() + "% of the form completed");
+            });
         
     });
    

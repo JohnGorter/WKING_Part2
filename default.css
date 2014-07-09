@@ -1,19 +1,40 @@
-body { background-image:url('./images/logo.jpg');}
-li > span { display:none}
-.visible { display:block}
+/******************************************************/
+/* Default stylesheet for world cup application       */
+/*                                                    */
+/* Author: John Gorter (Info Support BV)              */
+/* Date: 09-07-2014                                   */
+/*                                                    */
+/******************************************************/
+
+/* element styles */
+body {
+    background-image:url('./images/logo.jpg');
+    }
+
+li {
+    cursor: hand
+    }
     
-#header, #footer {
-    position:relative;
-    background-color:green;
-    color:white;
+li > span {
+    display:none
+    }
+
+/* class styles */
+.visible {
+    display:block
+    }
+
+.jumbotron {
+    background-color:green !important;
     border:1px solid black;
-    border-radius:15px;
-    padding:10px;
-    margin-bottom:20px;
     -webkit-transition: all 2s ease-in-out;
     transition: all 2s ease-in-out;
 }
-    
+
+.jumbotron > h1 {
+    color:white !important;
+}
+
 .start {
     -webkit-transform:rotateY(-0deg);
     transform:rotateY(-0deg);
@@ -24,11 +45,26 @@ li > span { display:none}
     transform:rotateY(720deg);
     }
     
+/* id styles */
+#header, #footer {
+    position:relative;
+    background-color:green;
+    color:white;
+    border:1px solid black;
+    border-radius:5px;
+    padding:10px;
+    margin-bottom:20px;
+    -webkit-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}
+
 #list, #details, #form {
     padding:10px;
     background-color:yellow;
     border:1px solid black;
-    border-radius:15px;
+    border-radius:5px;
     margin-bottom:20px;
     }
-
+    
+    
+/* end of file */
