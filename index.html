@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+   
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -23,17 +23,17 @@
         </div>
     </div>
     
-    <div class="row">
+    <div class="row perspective">
         <div class="col-xs-12 col-sm-6">
             <div id="list">
                 <h2 class="redbg">Games</h2>
-                <ul id="ullist" onclick="getDetails();">
+                <table id="ullist" class="table table-condensed">
                      
-                </ul>
+                </table>
                 
                 <!-- Button trigger modal -->
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="btnDialog">
-                  Add a new game
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="btnDialog">
+   Add a new game
                 </button>
             </div>
         </div>

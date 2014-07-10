@@ -6,6 +6,19 @@
 /*                                                    */
 /******************************************************/
 
+@font-face {
+    font-family: john;
+    src:url('johnf.otf');
+    
+}
+button, table {
+    position:relative; /* Or absolute, inline-block, inline */
+}
+
+button, table {
+    -webkit-transform:translateZ(200px); /* Equivalent or greater than parent's*/
+}
+
 /* element styles */
 body {
     background-image:url('./images/logo.jpg');
@@ -15,12 +28,12 @@ ul {
     list-style: none;
 }
 
-li {
+td {
     cursor: pointer;
     font-size:26px;
 }
     
-li > span {
+td > span {
     display:none
     }
 
@@ -40,17 +53,11 @@ li > span {
 
 .jumbotron > h1 {
     color:white !important;
+    font-family: john;
+    text-shadow:5px 5px 5px black;
 }
 
-.start {
-    -webkit-transform:rotateY(-0deg);
-    transform:rotateY(-0deg);
-    }
-    
-.end {
-    -webkit-transform:rotateY(720deg);
-    transform:rotateY(720deg);
-    }
+
     
 .modal-header {
     background-color:green;
@@ -78,13 +85,35 @@ header, footer {
     transition: all 2s ease-in-out;
 }
 
+.perspective {
+    -webkit-perspective:400px; /* Chrome, Safari, Opera  */
+    perspective:400px;
+
+}
+
+#headerdesktop, #headermobile {
+    -webkit-box-reflect: below -20px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(white));
+    
+}
+
 #list, #details {
+    
     padding:10px;
-    background-color:yellow;
     border:1px solid black;
     border-radius:5px;
     margin-bottom:20px;
+    box-shadow: 5px 5px 5px black;
+    background-image:linear-gradient(white, yellow);
     }
     
-    
+    #list{
+            -webkit-transform:rotateY(-12deg);
+            transform:rotateY(-12deg);
+    }
+
+    #details{
+            -webkit-transform:rotateY(10deg);
+            transform:rotateY(10deg);
+    }
+
 /* end of file */

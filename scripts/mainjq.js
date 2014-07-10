@@ -22,13 +22,13 @@
         });
             
         $("#gameform").submit(function() {
-                         
-            $("<li>").append($("<span>")
+            $("<tr>").append(           
+               $("<td>").append($("<span>")
                              .addClass("visible").text($("#team1").val() + "-" + $("#team2").val()))
                              .append($("<span>").text($("#description").val()))
                              .append($("<span>").text($("#scoreteam1").val() + "-" + $("#scoreteam2").val()))
                              .append($("<span>").text($("#date").val()))
-                    .appendTo($("#ullist"));
+            ).appendTo($("#ullist"));
                     
             
             
