@@ -9,6 +9,13 @@
     input:valid { border:2px solid green}
     input:invalid { border:2px solid red}
     
+    #disc_container { padding:20px;border:1px solid red;}
+    #disc_container:hover #disctekst{ display:block}
+    #disc_container:hover #disc { display:none}
+    
+    
+    #disctekst { display:none}
+    #disc { display:block}
 </style>
 
 <body>
@@ -25,7 +32,11 @@
         
         
     </form>
-
+ <div id="disc_container">
+    <div id="disc">disclaimer</div>
+    <div id="disctekst">staat de displclaimer teekst</div>
+ </div>
+ 
 </body>
 <script>
     document.getElementById("form").addEventListener("invalid", function(e){
