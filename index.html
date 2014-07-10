@@ -8,18 +8,18 @@
     <script type="text/javascript" src="./scripts/jquery.js"></script>
     <script type="text/javascript" src="./scripts/mainjq.js"></script>
     <script type="text/javascript" src="./bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./scripts/modernizr.js"></script>
 </head>
 
 <body>
 
-
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <div class="jumbotron">
+            <header class="jumbotron">
                 <h1 id="headerdesktop" class="hidden-xs">World Cup 2014 Finals <small>desktop</small></h1>
                 <h1 id="headermobile" class="visible-xs">World Cup 2014 Finals <small>mobile</small></h1>
-            </div>
+            </header>
         </div>
     </div>
     
@@ -49,50 +49,50 @@
     
     <div class="row">
         <div class="col-xs-12">
-            <div id="footer">
+            <footer>
                 <h3>All rights reserved (c) Info Support B.V.</h3>
-            </div>
+            </footer>
         </div>
     </div>    
 </div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<dialog class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
+    <form action="#" method="post" id="gameform">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Insert a new game</h4>
       </div>
       <div class="modal-body">
-<div id="form">
-            <form>
+            <div id="form">
                 <div class="form-group has-feedback">
                     <label for="title" class="control-label">Game</label>
                     <div class="input-group">
-                        <input type="text" name="team1" id="team1" class="form-control"/>
+                        <input type="text" name="team1" id="team1" required pattern="[a-zA-Z]{3}" class="form-control"/>
                         <span class="input-group-addon"> - </span>
-                        <input type="text" name="team2" id="team2" class="form-control"/>
+                        <input type="text" name="team2" id="team2" required pattern="[a-zA-Z]{3}" class="form-control"/>
                     </div>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="description" class="control-label">Description</label>
-                    <textarea name="description" id="description" class="form-control"></textarea>
+                    <textarea name="description" id="description" required class="form-control"></textarea>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="date" class="control-label">Date</label>
-                    <input type="text" name="date" id="date" class="form-control"/>
+                    <input type="date" name="date" id="date" required class="form-control"/>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="score" class="control-label">Score</label>
                     <div class="input-group">
-                        <input type="text" name="scoreteam1" id="scoreteam1" class="form-control"/>
+                        <input type="number" name="scoreteam1" id="scoreteam1" required class="form-control"/>
                         <span class="input-group-addon"> - </span>
-                        <input type="text" name="scoreteam2" id="scoreteam2" class="form-control"/>
+                        <input type="number" name="scoreteam2" id="scoreteam2" required class="form-control"/>
                     </div>
                 </div>
-            </form>
+            
             </div>
       </div>
       <div class="modal-footer">
@@ -101,11 +101,12 @@
                         <div class="progress-bar" id="progressbar"></div>
                     </div>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <input type="button" value="save" id="btnSave" class="btn btn-primary" data-dismiss="modal"/>
+        <input type="submit" value="save" class="btn btn-primary" id="btnSave" />
       </div>
     </div>
+    </form>
   </div>
-</div>
+</dialog>
 
 </body>
 

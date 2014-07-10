@@ -2,35 +2,40 @@
 
 <html>
 <head>
-    <title>Page Title</title>
-        <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css"></link>
+
 </head>
 
-<body>
- <style>
-    .block { background-color:red;color:white;border:1px solid black;}
- </style>
- 
- <div class="hidden-xs">
-    Deze reclame wordt niet getoond op een mobiel apparaat
- </div>
- 
-<div class="container">
-    <div class="row">
-        <div class="block col-xs-12 col-md-4">eerste</div>
-        <div class="block col-xs-12 col-md-4">tweede</div>
-        <div class="block col-xs-12 col-md-4">derde</div>
-    </div>
-    <div class="row">
-        <div class="block col-md-12">eerste</div>
-    </div>
-        <div class="row">
-        <div class="block col-xs-6 col-md-6">eerste</div>
-        <div class="block col-xs-6 col-md-6">eerste</div>
-    </div>
+<style>
+    input:valid { border:2px solid green}
+    input:invalid { border:2px solid red}
     
-</div>
- 
-</body>
+</style>
 
+<body>
+    
+    <form action="#" method="post" id="form">
+        <input type="text" name="name" id="name"
+               required
+               
+               title="vul een fatsoenlijke naam in met allemaal letters zonder spatie"
+               placeholder="uw naam hier.."
+             pattern="[a-zA-Z]{5}"/>
+        
+        <input type="submit" value="save"/>
+        
+        
+    </form>
+
+</body>
+<script>
+    document.getElementById("form").addEventListener("invalid", function(e){
+        alert('toon een dialog here..');
+        e.preventDefault();
+        
+        $("#name").get(0).setCustomValidity("foutmeling")
+        }, true);
+    
+    
+    
+</script>
 </html>
