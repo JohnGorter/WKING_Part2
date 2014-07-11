@@ -12,10 +12,19 @@
 </head>
 
 <body>
+    <style>
+        .flcontainer { margin-left:auto;margin-right:auto;width:970px;}
+        @media screen and (max-width:768px){
+            .flcontainer { width:600px;}
+        }
+        .flrow { display:flex;flex-wrap:wrap;}
+        .item {flex:1;margin-left:15px;margin-right:15px;}
+        .yellowitem {flex:1;min-width:360px;margin-left:15px;margin-right:15px;}
+    </style>
    
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
+<div class="flcontainer">
+    <div class="flrow">
+        <div class="item">
             <header class="jumbotron">
                 <h1 id="headerdesktop" class="hidden-xs">World Cup 2014 Finals <small>desktop</small></h1>
                 <h1 id="headermobile" class="visible-xs">World Cup 2014 Finals <small>mobile</small></h1>
@@ -23,8 +32,8 @@
         </div>
     </div>
     
-    <div class="row perspective">
-        <div class="col-xs-12 col-sm-6">
+    <div class="flrow perspective">
+        <div class="yellowitem">
             <div id="list">
                 <h2 class="redbg">Games</h2>
                 <table id="ullist" class="table table-condensed">
@@ -33,12 +42,12 @@
                 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="btnDialog">
-   Add a new game
+                    Add a new game
                 </button>
             </div>
         </div>
         
-        <div class="col-xs-12 col-sm-6">
+        <div class="yellowitem">
             <div id="details">
                 <h2 id="details_title">NED-BRA <small>3-0</small></h2>
                 <p id="details_description">Deze wedstrijd heeft een bijzonder tintje, het wordt namelijk de eerste keer dat Nederland met
@@ -47,8 +56,8 @@
         </div>
     </div>
     
-    <div class="row">
-        <div class="col-xs-12">
+    <div class="flrow">
+        <div class="item">
             <footer>
                 <h3>All rights reserved (c) Info Support B.V.</h3>
             </footer>
